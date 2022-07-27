@@ -4,13 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Name of chosen challenge</title>
+    <title>Redactr</title>
 
     <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <h2>make some magic here!!</h2>
+ <div class="container">
+  <header class="header">
+   <div class="logo-img">
+     <img src="img/altschool.png" alt="Alt School Logo" srcset="">
+   </div>
+   <h1>Scramble some words <br><span>from a body of text content</span></h1>
+ </header>
+ <main class="main-container">
+  <div>
+   <label  for="initialText">Enter your text content</label><br>
+   <textarea  type="text" name="initialText"  id="initialText" rows="4" cols="40" class="input-field" autofocus></textarea>
+  </div>
+  <div>
+   <label  for="redact">Words to redact</label><br>
+   <textarea  type="text" name="redact"  id="redact" rows="2" cols="20" class="input-field"></textarea>
+  </div>
+  <select name="" id="" class="input-field">
+   <option value="****">Asterisk</option>
+   <option value="####">Harsh</option>
+   <option value="++++">Plus sign</option>
+   <option value="____">Underscore</option>
+   <option value="----">Hyphens</option>
+  </select><br>
+  <div>
+  <label for="">Specify the words to replace</label><br>
+  <input type="text" name="speficyWord" class="input-field">
+ </div>
+  <button>Redact</button>
+</main>
+<footer>
+
+</footer>
+</div>
 
     <!-- // ============= EEND DO NOT EDIT ============== // -->
     <script src="index.mjs" type="module"></script>
