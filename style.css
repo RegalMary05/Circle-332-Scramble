@@ -17,7 +17,17 @@
 .light-container {
   height: 39rem;
   background-color: #fff;
-  color: #333;
+  color: rgb(0, 0, 0);
+}
+
+.light-body-container {
+  background-color: rgb(255, 255, 255);
+  background-size: cover;
+  margin: 1rem;
+  padding-top: 2rem;
+  color: #011;
+  text-transform: capitalize;
+  position: relative;
 }
 .header-container {
   display: flex;
@@ -41,7 +51,9 @@
 }
 .mode:active {
   transform: translateY(4px);
-}.header-container {
+}
+
+.header-container {
   display: flex;
   flex-direction: column;
   padding: 2rem;

@@ -1,4 +1,4 @@
-function startApp() {
+function startApp(){
   // Your entire app should not necessarily be coded inside this 
   // single function (though there's no penalty for that), 
   // so create and use/call additional functions from here
@@ -19,8 +19,9 @@ function startApp() {
   const redactBtn = document.querySelector(".redact-btn1");
   const resetBtn = document.querySelector(".reset-btn");
   const closeRedactBtn = document.querySelector(".close-modal");
-  const copyBtn = document.querySelector(".copy");
-  const shareBtn = document.querySelector(".share");
+  const copyBtn = document.querySelector("#copy");
+  const shareBtn = document.querySelector("#share");
+  
   const closeModal = function() {
     modal.classList.add("hidden");
     overlay.classList.add("hidden");
@@ -65,45 +66,46 @@ function startApp() {
 
   //copy button
   copyBtn.addEventListener("click", () => {
-    redacted.select();
-    redacted.setSelectionRange(0, 99999);
-    copyBtn.innerHTML = "copied";
-
-    navigator.clipboard.writeText(redacted.innerHTML).then(
-      function() {
-        alert("copied to clipboard ");
-      },
-      function(err) {
-        alert("could not copy text: ", err);
-      }
-    );
-
+    var select = document.createRange();
+    select.selectNode(redacted);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(select);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+    copyBtn.innerHTML = 'copied';
+    alert("copied to clipboard");
     setTimeout(() => {
       copyBtn.innerHTML = "copy";
     }, 2000);
-  });
+    })
+
   //share button
   shareBtn.addEventListener("click", async (e) => {
     let info = {
-      title: "",
+      title: "Break the limit!",
       text: `${redacted.innerHTML}`,
     };
     try {
-      await navigator.share(data);
+      await navigator.share(info);
     } catch (err) {
       console.log(err);
     }
-  });
+  })
 
   //mode button
   mode.addEventListener("click", () => {
+    const main  = document.querySelector("#body-container");
     if (body.classList.contains("light-container")) {
       body.classList.remove("light-container");
+      main.classList.remove("light-body-container")
       body.classList.add("dark-container");
+      main.classList.add("body-container")
       mode.innerHTML = "Light mode";
-    } else {
-      body.classList.add("light-container");
+    } else{
       body.classList.remove("dark-container");
+      main.classList.remove("body-container");
+      main.classList.add("light-body-container");
+      body.classList.add("light-container");
       mode.innerHTML = "Dark mode";
     }
   });
