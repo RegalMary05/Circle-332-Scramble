@@ -1,53 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redactr</title>
-
+    <title>REDACTR</title>
     <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
-</head>
-<body>
- <div class="container">
-  <header class="header">
-   <div class="logo-img">
-     <img src="img/altschool.png" alt="Alt School Logo" srcset="">
-   </div>
-   <h1>Scramble some words <br><span>from a body of text content</span></h1>
- </header>
- <main class="main-container">
-  <div>
-   <label  for="initialText">Enter your text content</label><br>
-   <textarea  type="text" name="initialText"  id="initialText" rows="4" cols="40" class="input-field" autofocus></textarea>
-  </div>
-  <div>
-   <label  for="redact">Words to redact</label><br>
-   <textarea  type="text" name="redact"  id="redact" rows="2" cols="20" class="input-field"></textarea>
-  </div>
-  <select name="" id="" class="input-field">
-   <option value="****">Asterisk</option>
-   <option value="####">Harsh</option>
-   <option value="++++">Plus sign</option>
-   <option value="____">Underscore</option>
-   <option value="----">Hyphens</option>
-  </select><br>
-  <div>
-  <label for="">Specify the words to replace</label><br>
-  <input type="text" name="speficyWord" class="input-field">
- </div>
-  <button>Redact</button>
-</main>
-<footer>
-
-</footer>
-</div>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  
+  <body class="dark-container">
+    <!-- <div class="container"> -->
+    <header class="header-container">
+      <button class="mode">Light mode</button>
+      <div class="logo-img"><img src="img/altschool.png" alt="" /></div>
+      <h1 id="head-text">REDACTR</h1>
+      <h6 class="heading-text">
+        scramble some words <br /><span>from a body of text content</span>
+      </h6>
+    </header>
+    <main class="body-container"  id="body-container">
+      <div class="input-container">
+        <label for="text-content">enter text content <span>e.g article, easy etc.</span></label>
+        <textarea class="input" name="text-content" id="text1" cols="5" rows="5" required></textarea>
+      </div>
+      <div class="input-container">
+        <label for="text-content">enter words to be Redacted from the Above text</label>
+        <input type="text" class="input" id="text2" required />
+      </div>
+      <div class="input-container">
+        <label for="select">enter redact option</label>
+        <input type="text" class="input" placeholder="*" id="hide" />
+      </div>
+      <div id="btn-container">
+        <button class="redact-btn redact-btn1">REdAcT</button>
+        <button class="reset-btn ">Reset</button>
+      </div>
+  
+      <div class="modal hidden">
+        <button class="close-modal">&times;</button>
+        <h4>I HAVE BEEN REDACTED 😍</h4>
+        <p class="redacted-text"></p>
+        <div class="overlay-btn">
+          <button class="v-btn" id="copy">copy</button>
+          <button class="v-btn" id="share">share</button>
+        </div>
+      </div>
+      <div class="overlay hidden"></div>
+    </main>
     <!-- // ============= EEND DO NOT EDIT ============== // -->
     <script src="index.mjs" type="module"></script>
     <!-- // ============= EEND DO NOT EDIT ============== // -->
-</body>
-</html>
+  </body>
+  
+  </html>
